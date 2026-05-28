@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
 
   const tokens = await res.json();
 
-  const response = NextResponse.redirect(new URL("/", req.url));
+  const response = NextResponse.redirect("http://127.0.0.1:3000/dashboard");
   response.cookies.set("spotify_token", tokens.access_token, {
     httpOnly: true,
     maxAge: 3600,
